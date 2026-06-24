@@ -1,0 +1,233 @@
+/* ==========================================================================
+   1. Core Reset & Typography Setup
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: #333333;
+    background-color: #f8f9fa;
+    padding: 0;
+}
+
+/* Hide raw line breaks to let semantic paragraph blocks handle spacing */
+br {
+    display: none;
+}
+
+/* ==========================================================================
+   2. Header Banner Image
+   ========================================================================== */
+body > img.picture {
+    max-width: 100%;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    margin: 0 auto 20px auto !important;
+}
+
+/* ==========================================================================
+   3. Top Navigation Menu Bar
+   ========================================================================== */
+table[width="100%"] {
+    background-color: #ffffff;
+    border-collapse: collapse;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    margin-bottom: 40px;
+}
+
+table[width="100%"] th {
+    padding: 0;
+}
+
+table[width="100%"] a {
+    display: block;
+    padding: 16px 20px;
+    color: #4a5568;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.2s ease-in-out;
+    border-bottom: 3px solid transparent;
+}
+
+table[width="100%"] a:hover {
+    color: #1a365d;
+    background-color: #f7fafc;
+    border-bottom: 3px solid #3182ce;
+}
+
+/* Automatically highlights the fifth active tab (About Us) */
+table[width="100%"] th:nth-child(5) a {
+    color: #3182ce;
+    border-bottom: 3px solid #3182ce;
+}
+
+/* ==========================================================================
+   4. About Main Layout Container (.paragraph)
+   ========================================================================== */
+.paragraph {
+    max-width: 850px;
+    margin: 0 auto 60px auto;
+    padding: 40px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    border: 1px solid #e2e8f0;
+}
+
+/* Section Title Blocks (.nav inside paragraph context) */
+.paragraph .nav {
+    display: block;
+    font-family: "Khmer OS Muol Light", "Kantumruy", sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1a365d;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #edf2f7;
+    position: relative;
+}
+
+.paragraph .para {
+    font-family: "Khmer OS Battambang", "Hanuman", sans-serif;
+    color: #4a5568;
+    line-height: 2; 
+}
+
+p.para {
+    font-size: 1.05rem;
+    text-align: justify;
+    text-justify: inter-word;
+    margin-bottom: 35px;
+    padding: 0;
+    margin-left: 0;
+}
+
+/* ==========================================================================
+   ========================================================================== */
+ul.para {
+    list-style-type: disc;
+    margin-bottom: 35px;
+    
+    padding-left: 20px; 
+    margin-left: 0;
+}
+
+ul.para li {
+    font-size: 1.05rem;
+    margin-bottom: 12px;
+    text-align: left;
+    padding-left: 5px; 
+}
+
+
+/* Decorative visual accent under section headers */
+.paragraph .nav::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background-color: #3182ce;
+}
+
+/* First section title adjustment */
+.paragraph .nav:first-of-type {
+    margin-top: 0;
+}
+
+/* Text Paragraph Blocks & List Emulation Styling */
+.paragraph p {
+    font-size: 1.05rem;
+    color: #4a5568;
+    text-align: justify;
+    margin-bottom: 25px;
+    text-justify: inter-word;
+}
+
+/* Formats raw inline text rows utilizing ">" into structured list visuals */
+.paragraph p:not(:first-of-type) {
+    display: block;
+    text-align: left;
+    color: transparent; /* Hides inline loose '>' symbols cleanly */
+    text-shadow: 0 0 0 #4a5568; /* Preserves standard character colors */
+    padding-left: 5px;
+}
+
+/* Cleans up list layout text breaks */
+.paragraph p:not(:first-of-type) {
+    line-height: 2.2;
+}
+
+/* ==========================================================================
+   5. Footer Structure
+   ========================================================================== */
+.footer {
+    background-color: #1a202c;
+    color: #a0aec0;
+    padding: 30px 20px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.footer1 em {
+    font-style: normal;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.footer2 strong {
+    color: #edf2f7;
+    font-weight: 400;
+}
+
+/* ==========================================================================
+   6. Mobile Adaptive Design Breakpoint
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    /* Stack Navigation Links Vertically on mobile phones */
+    table[width="100%"] tr {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    table[width="100%"] th {
+        display: block;
+        width: 100%;
+    }
+
+    table[width="100%"] a {
+        padding: 14px;
+        text-align: center;
+        border-bottom: 1px solid #edf2f7;
+    }
+
+    /* Adjust the card container breathing room on small screens */
+    .paragraph {
+        padding: 24px 20px;
+        margin: 20px auto 40px auto;
+        border-radius: 8px;
+    }
+
+    .paragraph .nav {
+        font-size: 1.25rem;
+        margin-top: 25px;
+    }
+
+    .paragraph p {
+        font-size: 1rem;
+        text-align: left;
+    }
+}

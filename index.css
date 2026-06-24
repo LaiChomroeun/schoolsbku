@@ -1,0 +1,275 @@
+/* ==========================================================================
+   1. Core Reset & Typography
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: #333333;
+    background-color: #f8f9fa;
+    padding: 0;
+}
+
+/* ==========================================================================
+   2. Header & Top Banner Image
+   ========================================================================== */
+/* Styles the main science gif banner to fit elegantly */
+body > img.picture {
+    max-width: 100%;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px !important;
+}
+
+/* Remove default line breaks where spacing is handled by CSS */
+br {
+    display: none;
+}
+
+/* ==========================================================================
+   3. Navigation Bar (Styled from Table)
+   ========================================================================== */
+table[width="100%"] {
+    background-color: #ffffff;
+    border-collapse: collapse;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    margin-bottom: 30px;
+}
+
+table[width="100%"] th {
+    padding: 0;
+}
+
+table[width="100%"] a {
+    display: block;
+    padding: 16px 20px;
+    color: #4a5568;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.2s ease-in-out;
+    border-bottom: 3px solid transparent;
+}
+
+table[width="100%"] a:hover {
+    color: #1a365d;
+    background-color: #f7fafc;
+    border-bottom: 3px solid #3182ce;
+}
+
+/* Highlights the active/home link */
+table[width="100%"] .index a {
+    color: #3182ce;
+    border-bottom: 3px solid #3182ce;
+}
+
+/* ==========================================================================
+   4. Student Showcase Gallery
+   ========================================================================== */
+div.picture {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto 40px auto;
+    padding: 0 20px;
+}
+
+div.picture .pic {
+    flex: 1;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+div.picture .pic:hover {
+    transform: translateY(-5px);
+}
+
+div.picture img.A {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+/* ==========================================================================
+   5. Subjects / Detail Table Section
+   ========================================================================== */
+.detail {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 60px auto;
+    border-collapse: separate;
+    border-spacing: 20px;
+    table-layout: fixed;
+}
+
+/* Header Cells styling */
+.detail th {
+    padding: 15px;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+    border-radius: 8px 8px 0 0;
+    text-transform: uppercase;
+}
+
+.detail th.prog { background-color: #2b6cb0; } /* Tech Blue */
+.detail th.web  { background-color: #319795; } /* Teal */
+.detail th.net  { background-color: #4a5568; } /* Charcoal */
+
+/* Content Cells styling */
+.detail td {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    vertical-align: top;
+}
+
+/* Lists styling inside columns */
+.detail ul, .detail ol {
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+
+.detail li {
+    margin-bottom: 12px;
+    color: #4a5568;
+    font-weight: 500;
+}
+
+/* Software Icons container grid */
+.detail .div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #edf2f7;
+}
+
+.detail .div img {
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+    object-fit: contain;
+    background: #fff;
+}
+
+.detail .div img:hover {
+    transform: scale(1.15);
+}
+
+/* ==========================================================================
+   6. Footer
+   ========================================================================== */
+.footer {
+    background-color: #1a202c;
+    color: #a0aec0;
+    padding: 30px 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: auto;
+}
+
+.footer1 em {
+    font-style: normal;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.footer2 strong {
+    color: #edf2f7;
+    font-weight: 400;
+}
+
+/* ==========================================================================
+   7. Responsive adjustments for smaller screens
+   ========================================================================== */
+@media (max-width: 768px) {
+    div.picture {
+        flex-direction: column;
+    }
+    
+    .detail, .detail tr, .detail th, .detail td {
+        display: block;
+        width: 100%;
+    }
+    
+    .detail {
+        border-spacing: 0 20px;
+        padding: 0 20px;
+    }
+    
+    .detail th {
+        border-radius: 8px 8px 0 0;
+    }
+    
+    .detail td {
+        border-radius: 0 0 8px 8px;
+        margin-bottom: 20px;
+    }
+}
+/* ==========================================================================
+   កូដកែប្រែសម្រាប់ Mobile Layout នៅក្នុង @media (max-width: 768px)
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+    
+    /* កែប្រែតួ Table ទាំងមូលឱ្យទៅជា Grid Layout */
+    .detail {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 0 !important;
+        margin: 0 0 30px 0;
+        width: 100% !important;
+    }
+
+    /* រំលាយលក្ខណៈជួរ (Rows) ចេញ ដើម្បីឱ្យចំណងជើង និងខ្លឹមសារក្លាយជាកូនផ្ទាល់របស់ Grid */
+    .detail tbody, 
+    .detail tr {
+        display: contents !important;
+    }
+
+    /* រៀបចំរាងចំណងជើង និងប្រអប់ខ្លឹមសារទូទៅ */
+    .detail th {
+        display: block;
+        width: 100% !important;
+        border-radius: 10px 10px 0 0 !important;
+        padding: 14px;
+        margin-top: 20px; /* បង្កើតគម្លាតរវាងប្រអប់នីមួយៗ */
+    }
+
+    .detail td {
+        display: block;
+        width: 100% !important;
+        border-radius: 0 0 10px 10px !important;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        margin-bottom: 10px;
+    }
+
+    /* 🛠️ គន្លឹះសំខាន់៖ បង្ខំឱ្យ ចំណងជើង និងខ្លឹមសារ ចាប់គូ និងរៀបលំដាប់ឡើងវិញ (Order) */
+    
+    /* គូទី ១: Programming */
+    .detail th:nth-child(1) { order: 1; }
+    .detail td:nth-child(1) { order: 2; }
+
+    /* គូទី ២: Web Development */
+    .detail th:nth-child(2) { order: 3; }
+    .detail td:nth-child(2) { order: 4; }
+
+    /* គូទី ៣: Network */
+    .detail th:nth-child(3) { order: 5; }
+    .detail td:nth-child(3) { order: 6; }
+}

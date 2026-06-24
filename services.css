@@ -1,0 +1,193 @@
+/* ==========================================================================
+   1. Core Reset & Typography (Supports Khmer & English Text)
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* Uses clean modern system fonts, falling back to clean Khmer typography fonts */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Khmer OS Battambang", "Kantumruy Pro", Arial, sans-serif;
+    line-height: 1.6;
+    color: #2d3748;
+    background-color: #f7fafc;
+    padding: 0;
+}
+
+/* Hide raw line breaks to rely purely on professional CSS spacing */
+br {
+    display: none;
+}
+
+/* ==========================================================================
+   2. Main Banner Image
+   ========================================================================== */
+body > img.picture {
+    max-width: 100%;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    margin: 0 auto 20px auto !important;
+}
+
+/* ==========================================================================
+   3. Top Navigation Menu Bar
+   ========================================================================== */
+table[width="100%"]:not(.ser) {
+    background-color: #ffffff;
+    border-collapse: collapse;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    margin-bottom: 40px;
+}
+
+table[width="100%"]:not(.ser) th {
+    padding: 0;
+}
+
+table[width="100%"]:not(.ser) a {
+    display: block;
+    padding: 16px 20px;
+    color: #4a5568;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.2s ease-in-out;
+    border-bottom: 3px solid transparent;
+}
+
+table[width="100%"]:not(.ser) a:hover {
+    color: #1a365d;
+    background-color: #f7fafc;
+    border-bottom: 3px solid #3182ce;
+}
+
+/* Highlights the active Services link */
+table[width="100%"]:not(.ser) th:nth-child(3) a {
+    color: #3182ce;
+    border-bottom: 3px solid #3182ce;
+}
+
+/* ==========================================================================
+   4. Services Layout Grid (.ser table styling)
+   ========================================================================== */
+.ser {
+    max-width: 1000px;
+    margin: 0 auto 60px auto;
+    border-collapse: separate;
+    border-spacing: 0 16px; /* Creates clean spacing between separate rows */
+}
+
+/* Base style for every row container block */
+.ser tr {
+    background: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+    border-radius: 8px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ser tr:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Left Column: Khmer Header Text */
+.ser th {
+    text-align: left;
+    padding: 20px 30px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1a365d;
+    border-radius: 8px 0 0 8px;
+    border-left: 5px solid #3182ce; /* Adds a clean blue structural accent marker */
+}
+
+/* Right Column: English Description Text */
+.ser td {
+    padding: 20px 30px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #4a5568;
+    text-align: right;
+    border-radius: 0 8px 8px 0;
+}
+
+/* Distinct matching left-border highlight variants for row types */
+.ser tr:nth-child(2) th { border-left-color: #319795; } /* Teal accents */
+.ser tr:nth-child(3) th { border-left-color: #4a5568; } /* Charcoal accents */
+.ser tr:nth-child(4) th { border-left-color: #e53e3e; } /* Red accents */
+
+/* ==========================================================================
+   5. Footer Area
+   ========================================================================== */
+.footer {
+    background-color: #1a202c;
+    color: #a0aec0;
+    padding: 30px 20px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.footer1 em {
+    font-style: normal;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.footer2 strong {
+    color: #edf2f7;
+    font-weight: 400;
+}
+
+/* ==========================================================================
+   កូដកែប្រែសម្រាប់ Mobile Layout នៅក្នុង @media (max-width: 768px)
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+    
+    /* កែប្រែតួ Table ទាំងមូលឱ្យទៅជា Grid Layout */
+    .detail {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 0 !important;
+        margin: 0 0 30px 0;
+        width: 100% !important;
+    }
+
+    /* រំលាយលក្ខណៈជួរ (Rows) ចេញ ដើម្បីឱ្យចំណងជើង និងខ្លឹមសារក្លាយជាកូនផ្ទាល់របស់ Grid */
+    .detail tbody, 
+    .detail tr {
+        display: contents !important;
+    }
+
+    /* រៀបចំរាងចំណងជើង និងប្រអប់ខ្លឹមសារទូទៅ */
+    .detail th {
+        display: block;
+        width: 100% !important;
+        border-radius: 10px 10px 0 0 !important;
+        padding: 14px;
+        margin-top: 20px; /* បង្កើតគម្លាតរវាងប្រអប់នីមួយៗ */
+    }
+
+    .detail td {
+        display: block;
+        width: 100% !important;
+        border-radius: 0 0 10px 10px !important;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        margin-bottom: 10px;
+    }
+
+    /* 🛠️ គន្លឹះសំខាន់៖ បង្ខំឱ្យ ចំណងជើង និងខ្លឹមសារ ចាប់គូ និងរៀបលំដាប់ឡើងវិញ (Order) */
+    
+    /* គូទី ១: Programming */
+    .detail th:nth-child(1) { order: 1; }
+    .detail td:nth-child(1) { order: 2; }
+
+    /* គូទី ២: Web Development */
+    .detail th:nth-child(2) { order: 3; }
+    .detail td:nth-child(2) { order: 4; }
+
+    /* គូទី ៣: Network */
+    .detail th:nth-child(3) { order: 5; }
+    .detail td:nth-child(3) { order: 6; }
+}

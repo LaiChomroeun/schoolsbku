@@ -1,0 +1,210 @@
+/* ==========================================================================
+   1. Core Reset & Typography Setup
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: #2d3748;
+    background-color: #f7fafc;
+    padding: 0;
+}
+
+/* Hide raw line breaks to allow flexbox/grid layout handling */
+br {
+    display: none;
+}
+
+/* ==========================================================================
+   2. Header Banner Image
+   ========================================================================== */
+body > img.picture {
+    max-width: 100%;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    margin: 0 auto 20px auto !important;
+}
+
+/* ==========================================================================
+   3. Top Navigation Menu Bar
+   ========================================================================== */
+table[width="100%"] {
+    background-color: #ffffff;
+    border-collapse: collapse;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    margin-bottom: 40px;
+}
+
+table[width="100%"] th {
+    padding: 0;
+}
+
+table[width="100%"] a {
+    display: block;
+    padding: 16px 20px;
+    color: #4a5568;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.2s ease-in-out;
+    border-bottom: 3px solid transparent;
+}
+
+table[width="100%"] a:hover {
+    color: #1a365d;
+    background-color: #f7fafc;
+    border-bottom: 3px solid #3182ce;
+}
+
+/* Automatically highlights the active Download page tab */
+table[width="100%"] th:nth-child(4) a {
+    color: #3182ce;
+    border-bottom: 3px solid #3182ce;
+}
+
+/* ==========================================================================
+   4. Four-Column Resource Grid (.download)
+   ========================================================================== */
+.download {
+    max-width: 1200px;
+    margin: 0 auto 60px auto;
+    padding: 0 20px;
+    
+    /* Modern 4-column responsive grid template */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    align-items: start;
+}
+
+/* Card Column Panels */
+.download > div {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    border: 1px solid #e2e8f0;
+    display: flex;
+    flex-direction: column;
+    min-height: 250px;
+}
+
+/* Shared Category Header Typography (.font, .cr, .off, .pl) */
+.download .font, 
+.download .cr, 
+.download .off, 
+.download .pl {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #edf2f7;
+    letter-spacing: 0.3px;
+}
+
+/* Unique color themes to differentiate the resource channels */
+.download .font { color: #2b6cb0; border-color: #bee3f8; } /* Blue */
+.download .cr   { color: #c53030; border-color: #fed7d7; } /* Red */
+.download .off  { color: #2f855a; border-color: #c6f6d5; } /* Green */
+.download .pl   { color: #b7791f; border-color: #feebc8; } /* Orange */
+
+/* Resource Links Styled as Interactive Cards */
+.download a {
+    display: inline-block;
+    color: #4a5568;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+    background-color: #f7fafc;
+    border-radius: 6px;
+    border-left: 3px solid transparent;
+    transition: all 0.2s ease;
+}
+
+/* Link Interactions mimicking actual action buttons */
+.download a:hover {
+    color: #1a202c;
+    background-color: #edf2f7;
+    transform: translateX(4px);
+}
+
+/* Match individual dynamic left accent borders with headers */
+.download div:nth-child(1) a:hover { border-left-color: #2b6cb0; }
+.download div:nth-child(2) a:hover { border-left-color: #c53030; }
+.download div:nth-child(3) a:hover { border-left-color: #2f855a; }
+.download div:nth-child(4) a:hover { border-left-color: #b7791f; }
+
+/* ==========================================================================
+   5. Footer Layout Structure
+   ========================================================================== */
+.footer {
+    background-color: #1a202c;
+    color: #a0aec0;
+    padding: 30px 20px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.footer1 em {
+    font-style: normal;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.footer2 strong {
+    color: #edf2f7;
+    font-weight: 400;
+}
+
+/* ==========================================================================
+   6. Mobile Adaptive Design Breakpoint
+   ========================================================================== */
+@media screen and (max-width: 992px) {
+    /* Switch down to 2-columns on tablets */
+    .download {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    /* Stack Navigation Links Vertically on mobile phones */
+    table[width="100%"] tr {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    table[width="100%"] th {
+        display: block;
+        width: 100%;
+    }
+
+    table[width="100%"] a {
+        padding: 14px;
+        text-align: center;
+        border-bottom: 1px solid #edf2f7;
+    }
+
+    /* Stack Download Category Cards into a single linear view */
+    .download {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 0 10px;
+    }
+
+    .download > div {
+        min-height: auto;
+        padding: 20px;
+    }
+}
